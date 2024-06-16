@@ -1,0 +1,29 @@
+# Aliases for various commands
+
+# Navigation
+alias ..="cd .."
+alias ...="cd ../.."
+
+# Listing
+alias ll="ls -lA"
+
+# Basic commands
+alias cp="cp -r"
+
+# SSH
+alias keygen="ssh-keygen -t ed25519"
+
+# --- Docker ---
+alias dcs="docker ps"
+alias dcu="docker compose up"
+
+# Docker exec, in function form because cannot add cli agruments to alias
+function dce() {
+  docker exec -it $1 /bin/bash
+}
+
+# Docker logs follow
+function dcl() {
+  docker logs -f $1
+}
+# ----------
