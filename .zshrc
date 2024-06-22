@@ -22,18 +22,28 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/oh-my-posh.toml)"
 # ----------
 
+# --- brew packages setup ---
+source <(fzf --zsh)
+# ----------
+
 # Exports 
 source $DOTFILES/.exports
 
 # PATH configs
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="$PATH:$GOROOT/bin"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 
 # Aliases
 source $DOTFILES/.aliases
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+
+
+
 
 # NVM
 export NVM_DIR="$HOME/.nvm"

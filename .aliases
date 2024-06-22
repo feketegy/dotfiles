@@ -27,3 +27,6 @@ function dcl() {
   docker logs -f $1
 }
 # ----------
+
+# fzf preview with bat, line numbers and syntax highlighting
+alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"

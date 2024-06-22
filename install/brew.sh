@@ -5,3 +5,7 @@ then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# Install packages
+brew install alacritty
+brew install fzf
+brew install bat
