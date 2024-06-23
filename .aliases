@@ -29,4 +29,4 @@ function dcl() {
 # ----------
 
 # fzf preview with bat, line numbers and syntax highlighting
-alias fzf="fzf --preview 'bat --style=numbers --color=always {}'"
+alias f="fzf --preview 'bat --style=numbers --color=always {}'"
