@@ -9,3 +9,4 @@ fi
 brew install alacritty
 brew install fzf
 brew install bat
+brew install eza

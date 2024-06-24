@@ -4,9 +4,6 @@
 alias ..="cd .."
 alias ...="cd ../.."
 
-# Listing
-alias ll="ls -lA"
-
 # Basic commands
 alias cp="cp -r"
 
@@ -30,3 +27,6 @@ function dcl() {
 
 # fzf preview with bat, line numbers and syntax highlighting
 alias f="fzf --preview 'bat --style=numbers --color=always {}'"
+
+# Listing
+alias ll="eza -lA --color=always"
