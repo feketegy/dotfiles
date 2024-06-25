@@ -9,6 +9,11 @@ source $DOTFILES/install/omz.sh
 source $DOTFILES/install/omp.sh
 # ----------
 
+# --- Configure macOS ---
+source $DOTFILES/.macos
+# ----------
+
+
 # --- Setup the symlinks ---
 if [ -e $HOME/.zshrc ] 
 then
@@ -19,4 +24,5 @@ ln -sf $DOTFILES/.zshrc $HOME/.zshrc
 
 ln -sfh $DOTFILES/config/alacritty $HOME/.config/alacritty
 ln -sfh $DOTFILES/config/oh-my-posh $HOME/.config/oh-my-posh
+ln -sfh $DOTFILES/config/nvim $HOME/.config/nvim
 # ----------

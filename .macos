@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+
+# Close System Settings
+osascript -e 'tell application "System Preferences" to quit'
+
+sudo -v
+
+# Set key repeat and delay until repeat to the fastest setting
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
