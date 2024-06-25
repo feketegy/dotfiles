@@ -30,3 +30,6 @@ alias f="fzf --preview 'bat --style=numbers --color=always {}'"
 
 # Listing
 alias ll="eza -lA --color=always"
+
+# Show file contents
+alias cat="bat"
