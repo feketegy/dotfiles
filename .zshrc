@@ -22,7 +22,11 @@ source $ZSH/oh-my-zsh.sh
 eval "$(oh-my-posh init zsh --config $HOME/.config/oh-my-posh/oh-my-posh.toml)"
 # ----------
 
-# --- brew packages setup ---
+# --- brew and packages ---
+
+# autto update every 3 days
+export HOMEBREW_AUTO_UPDATE_SECS=259200 
+
 source <(fzf --zsh)
 # ----------
 
