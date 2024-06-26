@@ -15,7 +15,7 @@ config.color_scheme = 'George Tokyo Night'
 
 -- Font
 config.font = wezterm.font("Mononoki Nerd Font Mono")
-config.font_size = 14
+config.font_size = 13
 config.bold_brightens_ansi_colors = true
 config.cell_width = 1.1
 config.line_height = 1.5
