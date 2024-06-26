@@ -7,7 +7,6 @@ Make sure to read the code before you use it.
 ## Prerequisites
 
 - zsh
-- git
 
 ## Install
 
