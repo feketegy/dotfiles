@@ -5,7 +5,10 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 # Basic commands
-alias cp="cp -r"
+alias cp="cp -r" # copy
+alias ll="eza -lA --color=always" # list
+alias cat="bat" # file contents
+alias cl="clear" # clear
 
 # SSH
 alias keygen="ssh-keygen -t ed25519"
@@ -28,8 +31,3 @@ function dcl() {
 # fzf preview with bat, line numbers and syntax highlighting
 alias f="fzf --preview 'bat --style=numbers --color=always {}'"
 
-# Listing
-alias ll="eza -lA --color=always"
-
-# Show file contents
-alias cat="bat"
