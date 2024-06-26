@@ -6,8 +6,7 @@ then
 fi
 
 # Install packages
-brew install alacritty
-brew install tmux
+brew install git
 brew install fzf
 brew install bat
 brew install eza
