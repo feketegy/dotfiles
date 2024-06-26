@@ -1,11 +1,105 @@
 #!/usr/bin/env bash
 
-
-# Close System Settings
+# close System Settings
 osascript -e 'tell application "System Preferences" to quit'
 
 sudo -v
 
-# Set key repeat and delay until repeat to the fastest setting
+
+# ----------
+# misc.
+
+# Set languages and measurement units
+defaults write NSGlobalDomain AppleLanguages -array "en" "hu" "ro"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
+
+# measurements
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+
+# ----------
+# input
+
+# set key repeat and delay until repeat to the fastest setting
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+
+# ----------
+# screen
+
+# Show scrollbars only when scrolling, possible values: WhenScrolling, Automatic, Always
+defaults write NSGlobalDomain AppleShowScrollBars -string "WhenScrolling"
+
+# screenshot defaults to png
+defaults write com.apple.screencapture type -string "png"
+
+# disable screenshot shadow
+defaults write com.apple.screencapture disable-shadow -bool true
+
+# enable sub-pixel rendering
+defaults write NSGlobalDomain AppleFontSmoothing -int 1
+
+
+# -----------
+# finder
+
+# disable anumations
+defaults write com.apple.finder DisableAllAnimations -bool true
+
+# show all filename extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# show statusbar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# show pathbar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# keep directories on top when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+# search the current dir by default
+defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
+
+# disable warning when changing file extension
+defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# enable spring-loaded directories and remove springing delay
+defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+defaults write NSGlobalDomain com.apple.springing.delay -float 0
+
+# disable .DS_Store file creation on network and usb volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+# use list view in finder by default, possible values: icnv, clmv, glyv
+defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
+
+
+# ----------
+# dock
+
+# 42px dock icon size
+defaults write com.apple.dock tilesize -int 42
+
+# minimize applications into separate dock icons
+defaults write com.apple.dock minimize-to-application -bool false
+
+# indicator lights for opened dock apps
+defaults write com.apple.dock show-process-indicators -bool true
+
+# disable animation when launching dock apps
+defaults write com.apple.dock launchanim -bool false
+
+# disable dock auto-hide
+defaults write com.apple.dock autohide -bool false
+
+# disable showing recent apps in the dock
+defaults write com.apple.dock show-recents -bool false
+
+
+echo -e "\n====================================================="
+echo -e "Restart your computer for the changes to take effect."
+echo -e "====================================================="
