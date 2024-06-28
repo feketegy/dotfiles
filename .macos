@@ -9,6 +9,13 @@ sudo -v
 # ----------
 # misc.
 
+# timezone
+systemsetup -settimezone Europe/Bucharest
+
+# defaault 24-hour clock
+defaults write com.apple.menuextra.clock Show24Hour 1
+defaults write com.apple.menuextra.clock ShowDate 1
+
 # Set languages and measurement units
 defaults write NSGlobalDomain AppleLanguages -array "en" "hu" "ro"
 defaults write NSGlobalDomain AppleLocale -string "en_US@currency=EUR"
@@ -98,6 +105,13 @@ defaults write com.apple.dock autohide -bool false
 
 # disable showing recent apps in the dock
 defaults write com.apple.dock show-recents -bool false
+
+# minimize/maximize effect that is faster, possible values: scale, genie
+defaults write com.apple.dock mineffect -string "scale"
+
+# hack: stop the dock app jumping from one display to another and still have the "Displays have separate spaces" option enabled
+# with this hack, the dock will stay on the main display
+defaults write com.apple.dock autohide-delay -float 9999999
 
 
 echo -e "\n====================================================="
