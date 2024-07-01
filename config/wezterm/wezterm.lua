@@ -27,6 +27,8 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.95
 config.macos_window_background_blur = 8
 
+config.window_close_confirmation = 'NeverPrompt'
+
 -- Key bindings
 local act = wezterm.action
 
