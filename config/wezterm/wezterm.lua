@@ -11,7 +11,7 @@ config.colors = {
   selection_bg = "#ffa028",
   selection_fg = "#000000",
 
-  ansi = {"#000000","#FF3428","#f6fe11","#c2a86c","#555555","#555555","#ffa028","#ffa028"},
+  ansi = {"#000000","#FF3428","#f6fe11","#c2a86c","#7a4f17","#7a4f17","#ffa028","#ffa028"},
   brights = {"#666666","#feba11","#777777","#feba11","#feba11","#feba11","#ffa028","#ffa028"}
 }
 
