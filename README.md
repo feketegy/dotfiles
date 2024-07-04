@@ -17,3 +17,9 @@ chmod u+x ./install.sh
 
 ./install.sh
 ```
+
+## Terminal Colors
+
+![cli](./_screenshots/002.png)
+
+![midnight commander](./_screenshots/001.png)
