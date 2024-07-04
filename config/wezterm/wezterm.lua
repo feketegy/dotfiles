@@ -1,16 +1,19 @@
 local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 
--- Override the Tokyo Night color scheme
-local tokyo_night = wezterm.color.get_builtin_schemes()['Tokyo Night']
-tokyo_night.background = "#010101"
+-- Custom color scheme
+config.colors = {
+  background = "#000000",
+  foreground = "#ffa028",
+  cursor_bg = "#ffa028",
+  cursor_border = "#ffa028",
+  cursor_fg = "#000000",
+  selection_bg = "#ffa028",
+  selection_fg = "#000000",
 
-config.color_schemes = {
-  ['George Tokyo Night'] = tokyo_night
+  ansi = {"#000000","#FF3428","#f6fe11","#c2a86c","#555555","#555555","#ffa028","#ffa028"},
+  brights = {"#666666","#feba11","#777777","#feba11","#feba11","#feba11","#ffa028","#ffa028"}
 }
-
-config.color_scheme = 'George Tokyo Night'
-
 
 -- Font
 config.font = wezterm.font("Mononoki Nerd Font Mono")
@@ -24,8 +27,7 @@ config.enable_tab_bar = true
 config.use_fancy_tab_bar = false
 
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.95
-config.macos_window_background_blur = 8
+config.window_background_opacity = 1
 
 config.window_close_confirmation = 'NeverPrompt'
 
