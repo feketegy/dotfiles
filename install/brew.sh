@@ -10,3 +10,7 @@ brew install git
 brew install fzf
 brew install bat
 brew install eza
+
+brew install ripgrep
+brew install fd
+brew install neovim
