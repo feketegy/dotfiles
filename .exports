@@ -4,4 +4,5 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # Go Configs
-export GOROOT=/usr/local/go
+export GOROOT=$(brew --prefix golang)/libexec
+export GO111MODULE=on

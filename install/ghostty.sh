@@ -1,4 +1,4 @@
-# Install WezTerm
+# Install Ghostty
 brew install ghostty
 
 # Symlink the configs

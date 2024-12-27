@@ -13,6 +13,8 @@ source $DOTFILES/install/omz.sh
 source $DOTFILES/install/omp.sh
 source $DOTFILES/install/tmux.sh
 source $DOTFILES/install/ghostty.sh
+source $DOTFILES/install/go.sh
+source $DOTFILES/install/node.sh
 # ----------
 
 # --- Setup the zshrc ---
