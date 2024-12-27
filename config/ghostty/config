@@ -6,10 +6,10 @@ font-size = 14
 font-thicken = false
 adjust-cell-height = 5%
 
-theme = tokyonight
+theme = rose-pine-moon
 
 background = 000000
-background-opacity = 0.7
+background-opacity = 0.8
 background-blur-radius = 20
 selection-foreground = 000000
 selection-background = FFFFFF
