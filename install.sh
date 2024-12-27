@@ -12,7 +12,7 @@ source $DOTFILES/install/brew.sh
 source $DOTFILES/install/omz.sh
 source $DOTFILES/install/omp.sh
 source $DOTFILES/install/tmux.sh
-source $DOTFILES/install/wezterm.sh
+source $DOTFILES/install/ghostty.sh
 # ----------
 
 # --- Setup the zshrc ---

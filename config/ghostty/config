@@ -1,0 +1,31 @@
+font-family = "mononoki Regular"
+font-family-bold = "mononoki Bold"
+font-family-italic = "mononoki Italic"
+font-family-bold-italic = "mononoki BoldItalic"
+font-size = 14
+font-thicken = false
+adjust-cell-height = 5%
+
+theme = tokyonight
+
+background = 000000
+background-opacity = 0.7
+background-blur-radius = 20
+selection-foreground = 000000
+selection-background = FFFFFF
+
+mouse-hide-while-typing = true
+
+window-padding-x = 10
+window-padding-y = 5
+window-theme = dark
+window-save-state = always
+window-new-tab-position = end
+window-inherit-font-size = false
+
+copy-on-select = false
+
+confirm-close-surface = true
+quit-after-last-window-closed = true
+
+macos-titlebar-proxy-icon = hidden
