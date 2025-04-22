@@ -1,12 +1,17 @@
-return {
+-- Show git signs in edited lines
+
+local M = {
   'lewis6991/gitsigns.nvim',
-  opts = {
-    signs = {
-      add = { text = '+' },
-      change = { text = '~' },
-      delete = { text = '_' },
-      topdelete = { text = '‾' },
-      changedelete = { text = '~' },
-    },
+}
+
+M.opts = {
+  signs = {
+    add = { text = 'A' },
+    change = { text = 'C' },
+    delete = { text = 'D' },
+    topdelete = { text = '‾' },
+    changedelete = { text = '~' },
   },
 }
+
+return M

@@ -1,18 +1,23 @@
-font-family = "mononoki Regular"
-font-family-bold = "mononoki Bold"
-font-family-italic = "mononoki Italic"
-font-family-bold-italic = "mononoki BoldItalic"
-font-size = 14
-font-thicken = false
-adjust-cell-height = 15%
+# font-family = "mononoki"
+# font-family-bold = "mononoki Bold"
+# font-family-italic = "mononoki Italic"
+# font-family-bold-italic = "mononoki BoldItalic"
+
+font-family = "Primal Skill Term"
+font-style = "Semi-Extended"
+font-size = 13.5
+
+font-thicken = true
+adjust-cell-height = 50%
 
 theme = rose-pine-moon
 
 background = 000000
-background-opacity = 0.8
+background-opacity = 0.95
 background-blur-radius = 20
 selection-foreground = 000000
 selection-background = FFFFFF
+cursor-color = FFFFFF
 
 mouse-hide-while-typing = true
 
@@ -30,3 +35,8 @@ confirm-close-surface = true
 quit-after-last-window-closed = true
 
 macos-titlebar-proxy-icon = hidden
+macos-titlebar-style = transparent
+
+macos-icon = xray
+
+# keybind = cmd+right=text:$

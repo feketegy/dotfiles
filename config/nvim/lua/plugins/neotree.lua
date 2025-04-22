@@ -1,22 +1,24 @@
-return {
+-- Tree view
+
+local M = {
   'nvim-neo-tree/neo-tree.nvim',
-  version = '*',
-  dependencies = {
-    'nvim-lua/plenary.nvim',
-    'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-    'MunifTanjim/nui.nvim',
-  },
-  cmd = 'Neotree',
-  keys = {
-    { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
-  },
-  opts = {
-    filesystem = {
-      window = {
-        mappings = {
-          ['<ESC><ESC>'] = 'close_window',
-        },
-      },
-    },
+}
+
+M.branch = 'v3.x'
+
+M.dependencies = {
+  'nvim-lua/plenary.nvim',
+  'nvim-tree/nvim-web-devicons',
+  'MunifTanjim/nui.nvim',
+}
+
+M.keys = {
+  {
+    '<C-n>',
+    ':Neotree filesystem toggle left<CR>',
+    mode = 'n',
+    desc = 'Toggle tree view',
   },
 }
+
+return M

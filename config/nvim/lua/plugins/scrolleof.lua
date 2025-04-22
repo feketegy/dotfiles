@@ -1,7 +1,14 @@
--- Helper to scroll past the last line, it uses the scrolloff option
--- to determine how many lines scroll past the lasst line.
-return {
+-- Scroll past the last line by vim.opt.scrolloff lines
+
+local M = {
   'Aasim-A/scrollEOF.nvim',
-  event = { 'CursorMoved', 'WinScrolled' },
-  opts = {},
 }
+
+M.event = {
+  'CursorMoved',
+  'WinScrolled',
+}
+
+M.opts = {}
+
+return M

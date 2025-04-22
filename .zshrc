@@ -36,7 +36,7 @@ source $DOTFILES/.exports
 # PATH configs
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$GOROOT/bin:$HOME/go/bin"
 
 # Aliases
 source $DOTFILES/.aliases

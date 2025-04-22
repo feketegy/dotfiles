@@ -1,40 +1,3 @@
-local M = {}
-
-function M.rosepine()
-  return {
-    'rose-pine/neovim',
-    name = 'rose-pine',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      local config = require 'rose-pine'
-      config.setup {
-        variant = 'moon',
-
-        styles = {
-          italic = false,
-          transparency = true,
-        },
-        highlight_groups = {
-          Comment = { italic = true },
-          CursorLine = { bg = '#26233a' },
-        },
-
-        palette = {
-          moon = {
-            base = '#11121a',
-            gold = '#f7ce94',
-          },
-        },
-      }
-
-      vim.cmd.colorscheme 'rose-pine'
-    end,
-  }
-end
-
-return M.rosepine()
-
 -- return {
 --  'catppuccin/nvim',
 --  name = 'catppuccin',
@@ -78,3 +41,34 @@ return M.rosepine()
 --     vim.cmd.colorscheme 'tokyonight'
 --   end,
 -- }
+
+return {
+  'rose-pine/neovim',
+  name = 'rose-pine',
+  lazy = false,
+  priority = 1000,
+  config = function()
+    local config = require 'rose-pine'
+    config.setup {
+      variant = 'moon',
+
+      styles = {
+        italic = false,
+        transparency = true,
+      },
+      highlight_groups = {
+        Comment = { italic = true },
+        CursorLine = { bg = '#26233a' },
+      },
+
+      palette = {
+        moon = {
+          base = '#11121a',
+          gold = '#f7ce94',
+        },
+      },
+    }
+
+    vim.cmd.colorscheme 'rose-pine'
+  end,
+}

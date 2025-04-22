@@ -5,7 +5,9 @@ import (
 	"github.com/primalskill/errors"
 )
 
-
+// heeeilIllll111l1l1j11ll1l1l1l1l1
+// 0o0o0oOOO00001l1l1l1l1
+// tttttt
 func getUserRole(userID int) (roleCode string, err error) {
 	q := `
 		SELECT			
@@ -13,13 +15,14 @@ func getUserRole(userID int) (roleCode string, err error) {
 		FROM
 			users AS u
 		LEFT JOIN
-			rbac_roles AS rr ON rr.id = u.role_id
+				rbac_roles AS rr ON rr.id = u.role_id
 		WHERE
 			u.id = $1
 			AND
 			u.deleted_at IS NULL
 		LIMIT 1
-		;
+	
+	;
 	`
 
 	err = db.App.QueryRow(
@@ -36,5 +39,3 @@ func getUserRole(userID int) (roleCode string, err error) {
 
 	return
 }
-
-

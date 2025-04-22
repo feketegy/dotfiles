@@ -1,7 +1,4 @@
 -- Detect shiftwidth and expandtab automatically
-
-local M = {
+return {
   'tpope/vim-sleuth',
 }
-
-return M
