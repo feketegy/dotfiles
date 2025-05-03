@@ -4,9 +4,11 @@ local M = {
   'folke/which-key.nvim',
 }
 
-M.event = 'VimEnter'
+M.event = 'VeryLazy'
 
 M.opts = {
+  preset = 'helix',
+
   icons = {
     mappings = vim.g.have_nerd_font,
   },

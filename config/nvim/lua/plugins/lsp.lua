@@ -10,17 +10,17 @@ function M.config()
   vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
-      local map = require('config.utils').map
+      local bufmap = require('config.utils').bufmap
       local fzf = require 'fzf-lua'
 
-      map('<leader>dq', vim.diagnostic.setloclist, 'Open diagnostic quickfix list')
-      map('<leader>df', vim.diagnostic.open_float, 'Open diagnostic in floating window')
-      map('<leader>ds', fzf.lsp_typedefs, 'Show type definitions')
-      map('gr', fzf.lsp_references, 'Show references')
-      map('gd', fzf.lsp_definitions, 'Go to definition')
-      map('gI', fzf.lsp_implementations, 'Show implementations')
-      map('ca', fzf.lsp_code_actions, 'Show code actions')
-      map('K', vim.lsp.buf.hover, 'Show info under cursor')
+      bufmap('<leader>dq', vim.diagnostic.setloclist, 'Open diagnostic quickfix list', event.buf)
+      bufmap('<leader>df', vim.diagnostic.open_float, 'Open diagnostic in floating window', event.buf)
+      bufmap('<leader>ds', fzf.lsp_typedefs, 'Show type definitions', event.buf)
+      bufmap('gr', fzf.lsp_references, 'Show references', event.buf)
+      bufmap('gd', fzf.lsp_definitions, 'Go to definition', event.buf)
+      bufmap('gI', fzf.lsp_implementations, 'Show implementations', event.buf)
+      bufmap('ca', fzf.lsp_code_actions, 'Show code actions', event.buf)
+      bufmap('K', vim.lsp.buf.hover, 'Show info under cursor', event.buf)
 
       -- Diagnostic setup
       vim.diagnostic.config {

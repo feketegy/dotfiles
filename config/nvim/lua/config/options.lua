@@ -70,3 +70,6 @@ o.scrolloff = 10
 
 -- Disable commandline until it is needed
 o.cmdheight = 0
+
+-- Define global borders (some plugins still don't take this option in consideration)
+o.winborder = 'rounded'

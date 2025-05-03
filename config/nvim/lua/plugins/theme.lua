@@ -8,6 +8,8 @@ function M.rosepine()
     priority = 1000,
     config = function()
       local config = require 'rose-pine'
+      local colors = require 'rose-pine.palette'
+
       config.setup {
         variant = 'moon',
         dark_variant = 'moon',
@@ -21,6 +23,8 @@ function M.rosepine()
           Normal = { bg = '#111111' },
           Comment = { italic = true },
           CursorLine = { bg = '#1E202E' },
+          CursorLineNr = { fg = colors.subtle },
+          -- Pmenu = { bg = colors. }
         },
       }
 

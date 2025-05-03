@@ -23,7 +23,7 @@ M.opts = {
     },
     documentation = {
       auto_show = true,
-      auto_show_delay_ms = 250,
+      auto_show_delay_ms = 0,
       window = { border = 'rounded' },
     },
     ghost_text = {
@@ -31,7 +31,7 @@ M.opts = {
     },
   },
   fuzzy = {
-    implementation = 'prefer_rust',
+    implementation = 'prefer_rust_with_warning',
   },
   keymap = {
     preset = 'default',
