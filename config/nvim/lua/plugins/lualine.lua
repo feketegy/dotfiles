@@ -1,5 +1,11 @@
 -- Statusline
+-- A lot of stuff is from: https://github.com/benfrain/neovim/blob/main/lua/setup/lualine.lua
 
+-- -----
+-- UTILS
+-- -----
+--
+-- Show little dot when recording a macro
 local function show_macro_recording()
   local recording_register = vim.fn.reg_recording()
   if recording_register == '' then
@@ -9,6 +15,7 @@ local function show_macro_recording()
   end
 end
 
+-- Remap modes to abbreviations
 local mode_map = {
   ['NORMAL'] = 'N',
   ['O-PENDING'] = 'N?',
