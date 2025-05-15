@@ -4,11 +4,14 @@ local M = {
   'ibhagwan/fzf-lua',
 }
 
+M.enabled = false
+
 M.dependencies = {
   'nvim-tree/nvim-web-devicons',
 }
 
 M.keys = {
+
   {
     '<leader>ff',
     function()

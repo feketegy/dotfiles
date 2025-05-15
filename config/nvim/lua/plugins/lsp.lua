@@ -11,16 +11,28 @@ function M.config()
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
       local bufmap = require('config.utils').bufmap
-      local fzf = require 'fzf-lua'
+      -- local fzf = require 'fzf-lua'
 
       bufmap('<leader>dq', vim.diagnostic.setloclist, 'Open diagnostic quickfix list', event.buf)
       bufmap('<leader>df', vim.diagnostic.open_float, 'Open diagnostic in floating window', event.buf)
-      bufmap('<leader>ds', fzf.lsp_typedefs, 'Show type definitions', event.buf)
-      bufmap('gr', fzf.lsp_references, 'Show references', event.buf)
-      bufmap('gd', fzf.lsp_definitions, 'Go to definition', event.buf)
-      bufmap('gI', fzf.lsp_implementations, 'Show implementations', event.buf)
-      bufmap('ca', fzf.lsp_code_actions, 'Show code actions', event.buf)
       bufmap('K', vim.lsp.buf.hover, 'Show info under cursor', event.buf)
+
+      bufmap('<leader>ds', function()
+        Snacks.picker.lsp_type_definitions()
+      end, 'Show type definitions', event.buf)
+
+      bufmap('gr', function()
+        Snacks.picker.lsp_references()
+      end, 'Show references', event.buf)
+
+      bufmap('gd', function()
+        Snacks.picker.lsp_definitions()
+      end, 'Go to definition', event.buf)
+
+      bufmap('gI', function()
+        Snacks.picker.lsp_implementations()
+      end, 'Show implementations', event.buf)
+      -- bufmap('ca', function() Snacks.picker.() end,, 'Show code actions', event.buf)
 
       -- Diagnostic setup
       vim.diagnostic.config {

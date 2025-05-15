@@ -20,7 +20,7 @@ function M.rosepine()
         },
 
         highlight_groups = {
-          Normal = { bg = '#111111' },
+          Normal = { bg = '#101115' },
           Comment = { italic = true },
           CursorLine = { bg = '#1E202E' },
           CursorLineNr = { fg = colors.subtle },

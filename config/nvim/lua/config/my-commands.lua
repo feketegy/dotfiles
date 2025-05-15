@@ -7,7 +7,7 @@ cmd('TextYankPost', {
   desc = 'Highlight text when yanking in normal mode',
   group = my_commands,
   callback = function()
-    vim.highlight.on_yank {
+    vim.hl.on_yank {
       timeout = 60,
       on_visual = false,
       higroup = 'Visual',

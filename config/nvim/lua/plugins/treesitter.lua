@@ -30,6 +30,7 @@ M.opts = {
     'php',
     'python',
     'query',
+    'regex',
     'scss',
     'svelte',
     'sql',

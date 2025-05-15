@@ -19,13 +19,16 @@ M.keys = {
 
 M.opts = {
   default_file_exlorer = true,
+  delete_to_trash = true,
+
   columns = {
     'icons',
   },
-  delete_to_trash = true,
+
   view_options = {
     show_hidden = true,
   },
+
   float = {
     -- Padding around the floating window
     padding = 2,
@@ -35,8 +38,10 @@ M.opts = {
     win_options = {
       winblend = 0,
     },
+
     -- preview_split: Split direction: "auto", "left", "right", "above", "below".
     preview_split = 'auto',
+
     -- This is the config that will be passed to nvim_open_win.
     -- Change values here to customize the layout
     override = function(conf)
