@@ -104,20 +104,5 @@ M.opts = {
   },
 }
 
--- function M.config(_, opts)
---   local theme = require 'lualine.themes.rose-pine'
---   local colors = require 'rose-pine.palette'
---
---   theme.normal.c.bg = colors.base
---   theme.insert.c.bg = colors.base
---   theme.visual.c.bg = colors.base
---   theme.replace.c.bg = colors.base
---   theme.command.c.bg = colors.base
---   theme.command.c.bg = colors.base
---
---   opts.options.theme = theme
---
---   require('lualine').setup(opts)
--- end
 
 return M

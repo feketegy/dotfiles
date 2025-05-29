@@ -34,18 +34,57 @@ end, {
 
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
---  Use CTRL+<hjkl> to switch between windows
+--  Use CTRL+<hjkl> to switch between windows/splits
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 map('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 map('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+
+-- Resizing splits
+map('n', '<C-S-k>', '<CMD>:resize +2<CR>', { desc = 'Resize h split +2 lines' })
+map('n', '<C-S-j>', '<CMD>:resize -2<CR>', { desc = 'Resize h split -2 lines' })
+map('n', '<C-S-h>', '<CMD>:vertical resize +2<CR>', { desc = 'Resize v split +2 lines' })
+map('n', '<C-S-l>', '<CMD>:vertical resize -2<CR>', { desc = 'Resize v split -2 lines' })
+
+-- Splits / windows management
+map('n', 's', '<C-w>', { desc = 'Manage splits'})
 
 -- Keep current line in the center when moving up / down
 map('n', '<C-d>', '<C-d>zz')
 map('n', '<C-u>', '<C-u>zz')
 
 -- Buffers
+
+-- Buffer movements
+map('n', '<TAB>', '<CMD>:bn<CR>', { desc = 'Move to next buffer' })
+map('n', '<S-TAB>', '<CMD>:bp<CR>', { desc = 'Move to previous buffer' })
+
+-- Delete/Close buffer
 map('n', '<leader>q', '<CMD>bd<CR>', { desc = 'Close buffer' })
+
+-- Create empty buffer
+map('n', '<leader>n', '<CMD>:enew<CR>', { desc = 'New empty buffer' })
+
+-- Save file and prompt for filename is buffer name is empty
+map('n', '<leader>w', function()
+  local save_file = function(path)
+    local ok, err = pcall(vim.cmd.w, path)
+
+    if not ok then
+      -- clear `vim.ui.input` from cmdline to make space for an error
+      vim.cmd.redraw()
+      vim.notify(err, vim.log.levels.ERROR, {
+        title = 'error while saving file',
+      })
+    end
+  end
+
+  if vim.api.nvim_buf_get_name(0) ~= '' then
+    save_file()
+  else
+    vim.ui.input({ prompt = 'filename: ' }, save_file)
+  end
+end, { desc = 'Save file' })
 
 -- ---------
 -- Filetypes

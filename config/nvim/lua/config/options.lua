@@ -73,3 +73,6 @@ o.cmdheight = 0
 
 -- Define global borders (some plugins still don't take this option in consideration)
 o.winborder = 'rounded'
+
+-- Nicer window borders to the sacrifice of one window line (horizontal or vertical)
+o.laststatus = 3

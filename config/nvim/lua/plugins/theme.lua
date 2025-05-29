@@ -24,7 +24,6 @@ function M.rosepine()
           Comment = { italic = true },
           CursorLine = { bg = '#1E202E' },
           CursorLineNr = { fg = colors.subtle },
-          -- Pmenu = { bg = colors. }
         },
       }
 

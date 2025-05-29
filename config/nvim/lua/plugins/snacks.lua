@@ -58,21 +58,14 @@ M.keys = {
     desc = 'Toggle file explorer',
   },
   {
-    '<leader>n',
+    '<leader>km',
     function()
-      Snacks.scratch()
+      Snacks.picker.keymaps()
     end,
     mode = 'n',
-    desc = 'Toggle scratch buffer',
+    desc = 'Find keymaps',
   },
-  {
-    '<leader>s',
-    function()
-      Snacks.scratch.select()
-    end,
-    mode = 'n',
-    desc = 'Select scratch buffer',
-  },
+
 }
 
 M.opts = {
