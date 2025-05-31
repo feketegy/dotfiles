@@ -32,7 +32,7 @@ M.opts = {
   formatters_by_ft = {
     -- Install formatters using brew or npm
     lua = { 'stylua' },
-    go = { 'goimports', 'gofmt', stop_after_first = false },
+    go = { 'goimports', 'gofmt', stop_after_first = true },
     javascript = { 'prettierd', 'prettier' },
     javascriptreact = { 'prettierd', 'prettier' },
     typescriptreact = { 'prettierd', 'prettier' },

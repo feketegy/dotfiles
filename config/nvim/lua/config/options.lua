@@ -76,3 +76,6 @@ o.winborder = 'rounded'
 
 -- Nicer window borders to the sacrifice of one window line (horizontal or vertical)
 o.laststatus = 3
+
+-- Change session behavior, this option is needed for the auto-session plugin
+o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
