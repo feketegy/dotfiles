@@ -21,6 +21,13 @@ require('lazy').setup {
   spec = {
     { import = 'plugins' },
   },
+  change_detection = {
+    enabled = true,
+    notify = false,
+  },
+  ui = {
+    border = 'rounded',
+  },
   performance = {
     cache = {
       enabled = true,
@@ -28,7 +35,7 @@ require('lazy').setup {
     rtp = {
       disabled_plugins = {
         'gzip',
-        -- 'netrwPlugin',
+        'netrwPlugin',
         'tarPlugin',
         'tohtml',
         'tutor',
