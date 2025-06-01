@@ -11,7 +11,6 @@ function M.config()
     group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
     callback = function(event)
       local bufmap = require('config.utils').bufmap
-      -- local fzf = require 'fzf-lua'
 
       bufmap('<leader>dq', vim.diagnostic.setloclist, 'Open diagnostic quickfix list', event.buf)
       bufmap('<leader>df', vim.diagnostic.open_float, 'Open diagnostic in floating window', event.buf)
@@ -32,7 +31,26 @@ function M.config()
       bufmap('gI', function()
         Snacks.picker.lsp_implementations()
       end, 'Show implementations', event.buf)
-      -- bufmap('ca', function() Snacks.picker.() end,, 'Show code actions', event.buf)
+
+      -- Highlight all instances of a symbol under the cursor if the LSP supports it
+      local client = vim.lsp.get_client_by_id(event.data.client_id)
+      if client and client:supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
+        local hi_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
+
+        -- highlight
+        vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+          buffer = event.buf,
+          group = hi_augroup,
+          callback = vim.lsp.buf.document_highlight,
+        })
+
+        -- clear highlight
+        vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+          buffer = event.buf,
+          group = hi_augroup,
+          callback = vim.lsp.buf.clear_references,
+        })
+      end
 
       -- Diagnostic setup
       vim.diagnostic.config {
@@ -68,6 +86,7 @@ function M.config()
     group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
     callback = function(event2)
       vim.lsp.buf.clear_references()
+      vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
     end,
   })
 
