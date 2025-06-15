@@ -61,6 +61,7 @@ map('n', '<S-TAB>', '<CMD>:bp<CR>', { desc = 'Move to previous buffer' })
 
 -- Delete/Close buffer
 map('n', '<leader>q', '<CMD>bd<CR>', { desc = 'Close buffer' })
+map('n', '<leader>q!', '<CMD>bd!<CR>', { desc = 'Close buffer without saving' })
 
 -- Create empty buffer
 map('n', '<leader>n', '<CMD>:enew<CR>', { desc = 'New empty buffer' })
