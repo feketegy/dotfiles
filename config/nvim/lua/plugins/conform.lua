@@ -11,7 +11,7 @@ M.cmd = 'ConformInfo'
 M.keys = { {
   '==',
   function()
-    require('conform').format { async = true }
+    require('conform').format { async = true, lsp_format = 'fallback' }
   end,
   mode = 'n',
   desc = 'Format the buffer',
@@ -25,6 +25,7 @@ M.opts = {
   format_on_save = function()
     return nil
   end,
+
   default_format_opts = {
     lsp_format = 'fallback',
     stop_after_first = true,
