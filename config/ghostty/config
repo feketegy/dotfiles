@@ -40,3 +40,4 @@ macos-titlebar-style = transparent
 macos-icon = xray
 
 # keybind = cmd+right=text:$
+# keybind = cmd+i=prompt_surface_title
