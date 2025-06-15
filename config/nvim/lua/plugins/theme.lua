@@ -43,4 +43,18 @@ function M.sequoia_main()
   }
 end
 
+function M.zenbones()
+  return {
+    'zenbones-theme/zenbones.nvim',
+    dependencies = 'rktjmp/lush.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.g.kanagawabones_darkness = 'stark'
+      vim.cmd.colorscheme 'kanagawabones'
+    end,
+  }
+end
+
 return M.rosepine()
+-- return M.zenbones()
