@@ -48,6 +48,10 @@ M.opts = {
       return conf
     end,
   },
+
+  keymaps = {
+    ['<Esc><Esc>'] = { 'actions.close', mode = 'n' },
+  },
 }
 
 return M
