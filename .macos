@@ -114,6 +114,9 @@ defaults write com.apple.dock mineffect -string "scale"
 # If the 60 seconds elapsed and the cursor doesn't move, the dock will be moved where the cursor is.
 defaults write com.apple.dock autohide-delay -float "60"
 
+# Add the automator app to the login items, this will re-execute the command above after every login, as it seems that Sonoma and Sequoia doesn't want to conform.
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Users/georgefekete/dotfiles/config/automator/stop-dock-jump.app", hidden:false}'
+
 
 echo -e "\n====================================================="
 echo -e "Restart your computer for the changes to take effect."
