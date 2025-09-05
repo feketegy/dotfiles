@@ -1,3 +1,6 @@
+
+auto-update-channel = tip
+
 # font-family = "mononoki"
 # font-family-bold = "mononoki Bold"
 # font-family-italic = "mononoki Italic"
@@ -13,8 +16,8 @@ adjust-cell-height = 50%
 theme = rose-pine-moon
 
 background = 000000
-background-opacity = 0.95
-background-blur-radius = 20
+background-opacity = 0.86
+background-blur-radius = 30
 selection-foreground = 000000
 selection-background = FFFFFF
 cursor-color = FFFFFF
@@ -39,5 +42,10 @@ macos-titlebar-style = transparent
 
 macos-icon = xray
 
+# custom-shader = ./shaders/cursor_smear.glsl
+# custom-shader-animation = true
+
+
 # keybind = cmd+right=text:$
 # keybind = cmd+i=prompt_surface_title
+
