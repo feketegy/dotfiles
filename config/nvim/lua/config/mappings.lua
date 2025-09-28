@@ -66,7 +66,7 @@ map('n', '<leader>q!', '<CMD>bd!<CR>', { desc = 'Close buffer without saving' })
 -- Create empty buffer
 map('n', '<leader>n', '<CMD>:enew<CR>', { desc = 'New empty buffer' })
 
--- Save file and prompt for filename is buffer name is empty
+-- Save file and prompt for filename if the buffer name is empty
 map('n', '<leader>w', function()
   local save_file = function(path)
     local ok, err = pcall(vim.cmd.w, path)
