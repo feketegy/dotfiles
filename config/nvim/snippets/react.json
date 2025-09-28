@@ -1,0 +1,25 @@
+{
+  "React Functional Component": {
+    "prefix": "rfc",
+    "body": [
+      "import React from 'react'\n",
+      "import s from \"./${2:styles}.pcss\";\n",
+      "export function ${1:MyComponent}(props) {",
+      "  return ${3:null};",
+      "}"
+    ],
+    "description": "GGGG Create a React functional component"
+  },
+
+  "cl for console.log": {
+    "prefix": "cl",
+    "description": "Create console.log",
+    "body": ["console.log($1)"]
+  },
+
+  "fori for loop": {
+    "prefix": "fori",
+    "description": "Create a for loop with i",
+    "body": ["for (let i = 0; i < $1; i++ ) {", "  $2", "}"]
+  }
+}

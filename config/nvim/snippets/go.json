@@ -1,0 +1,30 @@
+{
+  "Return error": {
+    "prefix": "ee",
+    "body": ["if err != nil {", "  return ${1:err}", "}"],
+    "description": "Return err"
+  },
+
+  "Return primalskill/errors": {
+    "prefix": "eee",
+    "body": [
+      "if err != nil {",
+      "  err = errors.E(",
+      "    \"$1\",",
+      "    err,",
+      "    errors.WithMeta(",
+      "        \"$2\", $3,",
+      "    ),",
+      "  )\n",
+      "  return err",
+      "}"
+    ],
+    "description": "Return wrapped err in primalskill/errors"
+  },
+
+  "fmt printf": {
+    "prefix": "pf",
+    "body": ["fmt.Printf(\"\\n\\n\\n%+v\\n\\n\\n\", $1)"],
+    "description": "Return a printf command"
+  }
+}
