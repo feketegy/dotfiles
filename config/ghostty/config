@@ -13,10 +13,10 @@ font-size = 13.5
 font-thicken = true
 adjust-cell-height = 50%
 
-theme = rose-pine-moon
+theme = Rose Pine
 
 background = 000000
-background-opacity = 0.86
+background-opacity = 0.95
 background-blur-radius = 30
 selection-foreground = 000000
 selection-background = FFFFFF
