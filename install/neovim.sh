@@ -7,7 +7,7 @@ brew install neovim
 brew install stylua lua-language-server luarocks
 
 # Go formatter and LSP
-brew install goimports gofmt gopls
+brew install goimports gofmt gopls templ
 
 # LSP for HTML, CSS, JS
 brew install vscode-langservers-extracted
@@ -30,3 +30,5 @@ npm install -g intelephense
 
 # SQL formatter
 brew install pgformatter sqlfluff
+
+
