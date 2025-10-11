@@ -3,7 +3,7 @@ version = 3
 final_space = true
 
 [secondary_prompt]
-  template = ' '
+  template = ' '
   foreground = 'white'
   background = 'transparent'
 
@@ -55,7 +55,7 @@ final_space = true
   alignment = 'left'
 
   [[blocks.segments]]
-    template = ''
+    template = ''
     background = 'transparent'
     type = 'text'
     style = 'plain'
