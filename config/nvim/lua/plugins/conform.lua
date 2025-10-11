@@ -48,6 +48,9 @@ M.opts = {
     md = { 'prettierd', 'prettier' },
     txt = { 'prettierd', 'prettier' },
     sql = { 'pg_format' },
+    templ = {
+      'templ',
+    },
   },
 }
 
