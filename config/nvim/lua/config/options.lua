@@ -78,4 +78,10 @@ o.winborder = 'rounded'
 o.laststatus = 3
 
 -- Change session behavior, this option is needed for the auto-session plugin
-o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+
+-- Set the title of the terminal to the opened buffer
+o.title = true
+o.titlelen = 0
+-- o.titlestring = '%f'
+o.titlestring = '%{fnamemodify(getcwd(),":t")}'
