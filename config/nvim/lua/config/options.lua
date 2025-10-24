@@ -80,8 +80,11 @@ o.laststatus = 3
 -- Change session behavior, this option is needed for the auto-session plugin
 o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
 
--- Set the title of the terminal to the opened buffer
+-- Enable titles
 o.title = true
+
+-- Don't cutoff if too long
 o.titlelen = 0
--- o.titlestring = '%f'
+
+-- Set the title of the terminal to the current working directory
 o.titlestring = '%{fnamemodify(getcwd(),":t")}'
