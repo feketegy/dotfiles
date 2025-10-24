@@ -2,6 +2,7 @@ DOTFILES=$(realpath ./)
 
 # Copy font
 rsync -r -u $DOTFILES/fonts/mononoki-v1.6-nerdfont/*.ttf $HOME/Library/Fonts
+rsync -r -u $DOTFILES/fonts/primal-skill-term/*.ttf $HOME/Library/Fonts
 
 # --- Install packages ---
 source $DOTFILES/install/brew.sh
