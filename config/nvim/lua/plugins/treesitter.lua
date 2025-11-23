@@ -34,6 +34,7 @@ M.opts = {
     'scss',
     'svelte',
     'sql',
+    'templ',
     'toml',
     'typescript',
     'vim',
