@@ -8,7 +8,7 @@ auto-update-channel = tip
 
 font-family = "Primal Skill Term"
 font-style = "Semi-Extended"
-font-size = 13.5
+font-size = 14
 
 font-thicken = true
 adjust-cell-height = 50%
