@@ -32,6 +32,14 @@ M.keys = {
     desc = 'Grep in current project',
   },
   {
+    '<leader>fgr',
+    function()
+      Snacks.picker.resume { source = 'grep' }
+    end,
+    mode = 'n',
+    desc = 'Resume last grep',
+  },
+  {
     '<leader>/',
     function()
       -- require('fzf-lua').lgrep_curbuf()
@@ -42,20 +50,12 @@ M.keys = {
   {
     '<leader><leader>',
     function()
-      Snacks.picker.buffers {
-        sort_lastused = true,
+      Snacks.picker.smart {
+        multi = { 'buffers' },
       }
     end,
     mode = 'n',
     desc = 'Find in open buffers',
-  },
-  {
-    '<C-n>',
-    function()
-      Snacks.picker.explorer()
-    end,
-    mode = 'n',
-    desc = 'Toggle file explorer',
   },
   {
     '<leader>km',
@@ -65,7 +65,6 @@ M.keys = {
     mode = 'n',
     desc = 'Find keymaps',
   },
-
 }
 
 M.opts = {
