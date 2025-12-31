@@ -46,63 +46,68 @@ M.dependencies = {
   'nvim-tree/nvim-web-devicons',
 }
 
-M.opts = {
-  options = {
-    icons_enabled = true,
-    component_separators = { left = '', right = '' },
-    section_separators = { left = '', right = '' },
-    refresh = {
-      statusline = 100,
-      tabline = 100,
-      winbar = 100,
-    },
-  },
-  sections = {
-    lualine_a = {
-      {
-        'mode',
-        fmt = function(s)
-          return mode_map[s] or s
-        end,
+M.config = function()
+  local auto_theme = require 'lualine.themes.auto'
+  auto_theme.normal.c.bg = 'NONE'
+
+  require('lualine').setup {
+    options = {
+      theme = auto_theme,
+      icons_enabled = true,
+      component_separators = { left = '', right = '' },
+      section_separators = { left = '', right = '' },
+      refresh = {
+        statusline = 100,
+        tabline = 100,
+        winbar = 100,
       },
     },
-    lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = {
-      {
-        'filename',
-        file_status = true,
-        path = 1,
-        shorting_target = 40,
-        symbols = {
-          modified = ' ', -- Text to show when the file is modified.
-          readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
-          unnamed = '[No Name]', -- Text to show for unnamed buffers.
-          newfile = '[New]', -- Text to show for new created file before first writting
+    sections = {
+      lualine_a = {
+        {
+          'mode',
+          fmt = function(s)
+            return mode_map[s] or s
+          end,
         },
       },
-      { show_macro_recording, color = { fg = '#ff6666' } },
-    },
-    lualine_x = {
-      {
-        'lsp_status',
-        icons_enabled = false,
-        color = { fg = '#6e6a86' },
+      lualine_b = { 'branch', 'diff', 'diagnostics' },
+      lualine_c = {
+        {
+          'filename',
+          file_status = true,
+          path = 1,
+          shorting_target = 40,
+          symbols = {
+            modified = ' ', -- Text to show when the file is modified.
+            readonly = ' ', -- Text to show when the file is non-modifiable or readonly.
+            unnamed = '[No Name]', -- Text to show for unnamed buffers.
+            newfile = '[New]', -- Text to show for new created file before first writting
+          },
+        },
+        { show_macro_recording, color = { fg = '#ff6666' } },
       },
-      {
-        'filetype',
-        icons_enabled = false,
-        color = { fg = '#6e6a86' },
+      lualine_x = {
+        {
+          'lsp_status',
+          icons_enabled = false,
+          color = { fg = '#6e6a86' },
+        },
+        {
+          'filetype',
+          icons_enabled = false,
+          color = { fg = '#6e6a86' },
+        },
+      },
+      lualine_y = { nil },
+      lualine_z = {
+        {
+          'location',
+          color = { bg = '#232138', fg = '#6e6a86' },
+        },
       },
     },
-    lualine_y = { nil },
-    lualine_z = {
-      {
-        'location',
-        color = { bg = '#232138', fg = '#6e6a86' },
-      },
-    },
-  },
-}
-
+  }
+end
 
 return M
