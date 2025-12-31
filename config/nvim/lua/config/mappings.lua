@@ -34,6 +34,12 @@ end, {
 
 map('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- Line movements
+map('n', 'j', 'gj', { desc = 'Move down the visible line' })
+map('n', 'k', 'gk', { desc = 'Move up the visible line' })
+map('n', '<Down>', 'gj', { desc = 'Move down the visible line' })
+map('n', '<Up>', 'gk', { desc = 'Move up the visible line' })
+
 --  Use CTRL+<hjkl> to switch between windows/splits
 map('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 map('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
@@ -47,7 +53,7 @@ map('n', '<C-S-h>', '<CMD>:vertical resize +2<CR>', { desc = 'Resize v split +2 
 map('n', '<C-S-l>', '<CMD>:vertical resize -2<CR>', { desc = 'Resize v split -2 lines' })
 
 -- Splits / windows management
-map('n', 's', '<C-w>', { desc = 'Manage splits'})
+map('n', 's', '<C-w>', { desc = 'Manage splits' })
 
 -- Keep current line in the center when moving up / down
 map('n', '<C-d>', '<C-d>zz')
