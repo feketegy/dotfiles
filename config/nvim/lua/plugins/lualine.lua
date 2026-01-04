@@ -71,7 +71,18 @@ M.config = function()
           end,
         },
       },
-      lualine_b = { 'branch', 'diff', 'diagnostics' },
+      lualine_b = {
+        'branch',
+        'diagnostics',
+        {
+          'lsp_status',
+          icons_enabled = false,
+        },
+        {
+          'filetype',
+          icons_enabled = false,
+        },
+      },
       lualine_c = {
         {
           'filename',
@@ -87,25 +98,9 @@ M.config = function()
         },
         { show_macro_recording, color = { fg = '#ff6666' } },
       },
-      lualine_x = {
-        {
-          'lsp_status',
-          icons_enabled = false,
-          color = { fg = '#6e6a86' },
-        },
-        {
-          'filetype',
-          icons_enabled = false,
-          color = { fg = '#6e6a86' },
-        },
-      },
+      lualine_x = { nil },
       lualine_y = { nil },
-      lualine_z = {
-        {
-          'location',
-          color = { bg = '#232138', fg = '#6e6a86' },
-        },
-      },
+      lualine_z = { nil },
     },
   }
 end
