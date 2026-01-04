@@ -1,11 +1,6 @@
 
 auto-update-channel = tip
 
-# font-family = "mononoki"
-# font-family-bold = "mononoki Bold"
-# font-family-italic = "mononoki Italic"
-# font-family-bold-italic = "mononoki BoldItalic"
-
 font-family = "Primal Skill Term"
 font-style = "Semi-Extended"
 font-size = 14
@@ -41,11 +36,4 @@ macos-titlebar-proxy-icon = hidden
 macos-titlebar-style = tabs
 
 macos-icon = xray
-
-# custom-shader = ./shaders/cursor_smear.glsl
-# custom-shader-animation = true
-
-
-# keybind = cmd+right=text:$
-# keybind = cmd+i=prompt_surface_title
 
