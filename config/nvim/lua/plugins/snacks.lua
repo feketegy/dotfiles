@@ -42,7 +42,7 @@ M.keys = {
   {
     '<leader>/',
     function()
-      -- require('fzf-lua').lgrep_curbuf()
+      Snacks.picker.lines()
     end,
     mode = 'n',
     desc = 'Grep in current buffer',
