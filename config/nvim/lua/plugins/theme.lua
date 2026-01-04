@@ -40,7 +40,7 @@ function M.rosepine()
   }
 end
 
-function M.zenbones()
+function M.rosebones()
   return {
     'zenbones-theme/zenbones.nvim',
     dependencies = 'rktjmp/lush.nvim',
@@ -68,4 +68,4 @@ function M.zenbones()
 end
 
 -- return M.rosepine()
-return M.zenbones()
+return M.rosebones()
