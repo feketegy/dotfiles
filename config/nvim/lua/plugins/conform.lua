@@ -55,6 +55,7 @@ M.opts = {
 }
 
 function M.config(_, opts)
+  -- Pass in the tab space for pg_format
   require('conform').setup(opts)
   require('conform').formatters.pg_format = {
     prepend_args = { '-s', vim.o.shiftwidth },
