@@ -48,7 +48,17 @@ M.dependencies = {
 
 M.config = function()
   local auto_theme = require 'lualine.themes.auto'
+
   auto_theme.normal.c.bg = 'NONE'
+  auto_theme.normal.z = {
+    bg = 'NONE',
+    fg = '#3e3a54',
+  }
+
+  auto_theme.insert.z = auto_theme.normal.z
+  auto_theme.replace.z = auto_theme.normal.z
+  auto_theme.visual.z = auto_theme.normal.z
+  auto_theme.command.z = auto_theme.normal.z
 
   require('lualine').setup {
     options = {
@@ -73,15 +83,6 @@ M.config = function()
       },
       lualine_b = {
         'branch',
-        'diagnostics',
-        {
-          'lsp_status',
-          icons_enabled = false,
-        },
-        {
-          'filetype',
-          icons_enabled = false,
-        },
       },
       lualine_c = {
         {
@@ -100,7 +101,17 @@ M.config = function()
       },
       lualine_x = { nil },
       lualine_y = { nil },
-      lualine_z = { nil },
+      lualine_z = {
+        'diagnostics',
+        {
+          'lsp_status',
+          icons_enabled = false,
+        },
+        {
+          'filetype',
+          icons_enabled = false,
+        },
+      },
     },
   }
 end
