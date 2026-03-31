@@ -2,24 +2,27 @@
 
 local M = {
   'nvim-treesitter/nvim-treesitter',
+
+  lazy = false,
+  branch = 'main',
+  build = ':TSUpdate',
 }
 
-M.build = ':TSUpdate'
-
-M.main = 'nvim-treesitter.configs'
-
-M.opts = {
-
+M.config = function()
   -- Keep alphabetical order when managing this list
-  ensure_installed = {
+  local parsers = {
     'bash',
     'c',
+    'comment',
     'css',
+    'csv',
     'diff',
     'dockerfile',
+    'gitignore',
     'go',
     'html',
     'javascript',
+    'jsdoc',
     'json',
     'lua',
     'luadoc',
@@ -31,42 +34,44 @@ M.opts = {
     'python',
     'query',
     'regex',
+    'rust',
     'scss',
     'svelte',
     'sql',
     'templ',
     'toml',
+    'tsv',
     'typescript',
     'vim',
     'vimdoc',
     'xml',
     'yaml',
-  },
+    'zig',
+  }
 
-  auto_install = true,
+  require('nvim-treesitter').install(parsers)
 
-  -- Enable highlighting
-  highlight = {
-    enable = true,
-    additional_vim_regex_highlighting = false,
-  },
+  vim.api.nvim_create_autocmd('FileType', {
+    callback = function(args)
+      local buf, filetype = args.buf, args.match
 
-  -- Enable indentation
-  indent = {
-    enable = true,
-    disable = { 'ruby' },
-  },
+      local language = vim.treesitter.language.get_lang(filetype)
+      if not language then
+        return
+      end
 
-  -- Incrementally select objects by pressing Enter to expand and Backspace to collapse the selection
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<Enter>',
-      node_incremental = '<Enter>',
-      scope_incremental = false,
-      node_decremental = '<Backspace>',
-    },
-  },
-}
+      -- check if parser exists and load it
+      if not vim.treesitter.language.add(language) then
+        return
+      end
+
+      -- enables syntax highlighting and other treesitter features
+      vim.treesitter.start(buf, language)
+
+      -- enables treesitter based indentation
+      vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+  })
+end
 
 return M
