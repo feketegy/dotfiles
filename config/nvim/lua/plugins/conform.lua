@@ -18,6 +18,7 @@ M.keys = { {
 } }
 
 M.opts = {
+  -- log_level = vim.log.levels.DEBUG,
   notify_on_error = true,
   notify_no_formatters = true,
 
