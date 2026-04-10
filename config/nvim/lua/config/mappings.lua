@@ -102,3 +102,35 @@ vim.filetype.add {
     pcss = 'css',
   },
 }
+
+-- LSP colors
+local apply_document_color = function()
+  -- "_off" is a special trigger to turn the document color off
+  -- possible values for the style: "background", "foreground", "virtual", or any string character
+  -- DOCUMENT_COLOR_STYLE in all caps to save the variable between sessions
+  local opts = { 'background', 'foreground', '󰌁 ', '_off' }
+  local idx = ((vim.g.DOCUMENT_COLOR_STYLE or 1) % #opts)
+
+  vim.g.DOCUMENT_COLOR_STYLE = idx
+
+  if opts[idx + 1] == '_off' then
+    vim.lsp.document_color.enable(false)
+    return
+  end
+
+  vim.lsp.document_color.enable(false)
+  vim.lsp.document_color.enable(true, nil, { style = opts[idx + 1] })
+end
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = vim.api.nvim_create_augroup('document-color', { clear = true }),
+
+  callback = function(evt)
+    apply_document_color()
+
+    vim.keymap.set('n', '<leader>cc', function()
+      vim.g.DOCUMENT_COLOR_STYLE = vim.g.DOCUMENT_COLOR_STYLE + 1
+      apply_document_color()
+    end, { buffer = evt.buf, desc = 'Highlight color references in the document.' })
+  end,
+})
