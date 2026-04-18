@@ -1,7 +1,4 @@
 -- Detect shiftwidth and expandtab automatically
 
-local M = {
-  'tpope/vim-sleuth',
-}
+vim.pack.add({ "https://github.com/tpope/vim-sleuth" })
 
-return M

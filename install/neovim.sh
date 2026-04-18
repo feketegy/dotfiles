@@ -3,6 +3,9 @@ brew install neovim
 
 # Install dependencies for the nvim configs, mainly LSPs and formatters
 
+# Needs rust
+brew install rust
+
 # Lua formatter, LSP and package manager
 brew install stylua lua-language-server luarocks
 

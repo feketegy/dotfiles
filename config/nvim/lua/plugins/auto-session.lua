@@ -1,10 +1,4 @@
 -- Session handler
+local add = require("utils.vim-pack").add
 
-local M = {
-  'rmagatti/auto-session',
-  lazy = false,
-}
-
-M.opts = {}
-
-return M
+add({ src = "https://github.com/rmagatti/auto-session" })

@@ -1,14 +1,8 @@
 -- Scroll past the last line by vim.opt.scrolloff lines
 
-local M = {
-  'Aasim-A/scrollEOF.nvim',
-}
+local on = require("utils.vim-pack").on
 
-M.event = {
-  'CursorMoved',
-  'WinScrolled',
-}
-
-M.opts = {}
-
-return M
+on({ "CursorMoved", "WinScrolled" }, {
+	name = "scrollEOF",
+	src = "https://github.com/Aasim-A/scrollEOF.nvim",
+})

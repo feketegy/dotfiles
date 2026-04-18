@@ -4,25 +4,28 @@ local g = vim.g
 local o = vim.opt
 
 -- Set leader key
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Nerd custom font enabled
 g.have_nerd_font = true
+
+-- Enable terminal colors
+o.termguicolors = true
 
 -- Enable line numbers and relative line numbers
 o.number = true
 o.relativenumber = true
 
 -- Enable mouse in all modes
-o.mouse = 'a'
+o.mouse = "a"
 
 -- Disable showing the mode on the last line
 o.showmode = false
 
 -- Sync clipboard between OS and Neovim
 vim.schedule(function()
-  o.clipboard = 'unnamedplus'
+	o.clipboard = "unnamedplus"
 end)
 
 -- Break indent
@@ -44,7 +47,7 @@ o.ignorecase = true
 o.smartcase = true
 
 -- Keep signcolumn
-o.signcolumn = 'yes'
+o.signcolumn = "yes"
 
 -- Set updatetime (after set ms the swap file will be written to disk)
 o.updatetime = 250
@@ -60,7 +63,7 @@ o.splitbelow = true
 o.list = false
 
 -- Preview substitutions in real-time
-o.inccommand = 'split'
+o.inccommand = "split"
 
 -- Show which line the cursor is on
 o.cursorline = true
@@ -72,13 +75,13 @@ o.scrolloff = 10
 o.cmdheight = 0
 
 -- Define global borders (some plugins still don't take this option in consideration)
-o.winborder = 'rounded'
+o.winborder = "rounded"
 
 -- Nicer window borders to the sacrifice of one window line (horizontal or vertical)
 o.laststatus = 3
 
 -- Change session behavior, this option is needed for the auto-session plugin
-o.sessionoptions = 'blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions'
+o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
 -- Enable titles
 o.title = true

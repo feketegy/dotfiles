@@ -1,57 +1,47 @@
 -- File navigations, editing
+local add = require("utils.vim-pack").add
+local map = require("utils.keymap").map
 
-local M = {
-  'stevearc/oil.nvim',
-}
+add({
+	name = "oil",
+	src = "https://github.com/stevearc/oil.nvim",
+	opts = {
+		default_file_exlorer = true,
+		delete_to_trash = true,
 
-M.dependencies = {
-  { 'echasnovski/mini.icons', opts = {} },
-}
+		columns = {
+			"icons",
+		},
 
-M.keys = {
-  {
-    '-',
-    '<CMD>Oil --float<CR>',
-    mode = 'n',
-    desc = 'Open Oil file manager in a floating window',
-  },
-}
+		view_options = {
+			show_hidden = true,
+		},
 
-M.opts = {
-  default_file_exlorer = true,
-  delete_to_trash = true,
+		float = {
+			-- Padding around the floating window
+			padding = 2,
+			max_width = 0,
+			max_height = 0,
+			border = "rounded",
+			win_options = {
+				winblend = 0,
+			},
 
-  columns = {
-    'icons',
-  },
+			-- preview_split: Split direction: "auto", "left", "right", "above", "below".
+			preview_split = "auto",
 
-  view_options = {
-    show_hidden = true,
-  },
+			-- This is the config that will be passed to nvim_open_win.
+			-- Change values here to customize the layout
+			override = function(conf)
+				return conf
+			end,
+		},
 
-  float = {
-    -- Padding around the floating window
-    padding = 2,
-    max_width = 0,
-    max_height = 0,
-    border = 'rounded',
-    win_options = {
-      winblend = 0,
-    },
-
-    -- preview_split: Split direction: "auto", "left", "right", "above", "below".
-    preview_split = 'auto',
-
-    -- This is the config that will be passed to nvim_open_win.
-    -- Change values here to customize the layout
-    override = function(conf)
-      return conf
-    end,
-  },
-
-  keymaps = {
-    ['<Esc><Esc>'] = { 'actions.close', mode = 'n' },
-  },
-}
-
-return M
+		keymaps = {
+			["<Esc><Esc>"] = { "actions.close", mode = "n" },
+		},
+	},
+	after = function()
+		map("-", "<CMD>Oil --float<CR>", "Open file manager in a floating window")
+	end,
+})

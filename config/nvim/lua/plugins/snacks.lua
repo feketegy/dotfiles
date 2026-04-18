@@ -1,118 +1,6 @@
 -- QoL plugins
 
-local M = {
-  'folke/snacks.nvim',
-  priority = 1000,
-  lazy = false,
-}
-
-M.keys = {
-  {
-    '<leader>ff',
-    function()
-      Snacks.picker.files()
-    end,
-    mode = 'n',
-    desc = 'Find files',
-  },
-  {
-    '<leader>fc',
-    function()
-      Snacks.picker.files { cwd = vim.fn.stdpath 'config' }
-    end,
-    mode = 'n',
-    desc = 'Find configs',
-  },
-  {
-    '<leader>fg',
-    function()
-      Snacks.picker.grep()
-    end,
-    mode = 'n',
-    desc = 'Grep in current project',
-  },
-  {
-    '<leader>fgr',
-    function()
-      Snacks.picker.resume { source = 'grep' }
-    end,
-    mode = 'n',
-    desc = 'Resume last grep',
-  },
-  {
-    '<leader>/',
-    function()
-      Snacks.picker.lines()
-    end,
-    mode = 'n',
-    desc = 'Grep in current buffer',
-  },
-  {
-    '<leader><leader>',
-    function()
-      Snacks.picker.smart {
-        multi = { 'buffers' },
-      }
-    end,
-    mode = 'n',
-    desc = 'Find in open buffers',
-  },
-  {
-    '<leader>km',
-    function()
-      Snacks.picker.keymaps()
-    end,
-    mode = 'n',
-    desc = 'Find keymaps',
-  },
-}
-
-M.opts = {
-  bigfile = {
-    enabled = true,
-  },
-
-  indent = {
-    enabled = true,
-    animate = {
-      enabled = false,
-    },
-    indent = {
-      only_scope = true,
-      only_current = true,
-    },
-    scope = {
-      hl = 'LineNr',
-    },
-  },
-
-  input = {
-    enabled = true,
-    style = 'fancy',
-  },
-
-  quickfile = {
-    enabled = true,
-  },
-
-  picker = {
-    enabled = true,
-    prompt = ' ',
-    sources = {},
-    focus = 'input',
-    layout = {
-      cycle = true,
-      preset = function()
-        return vim.o.columns >= 120 and 'default' or 'vertical'
-      end,
-    },
-  },
-
-  dashboard = {
-    enabled = true,
-    preset = {
-      pick = 'fzf_lua',
-      header = [[
+local header = [[
 ⠀⠀⠀⠀⠀⢀⣀⣠⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⢀⣤⠶⠿⠿⠿⣷⣦⣄⠀⠀⠀
 ⠀⠀⠀⣠⣾⣿⠿⠛⠛⠛⠛⠛⠿⣦⣄⠀⠀⡴⠋⠀⠀⠀⠀⠀⠀⠉⢻⣷⡄⠀
 ⠀⢀⣾⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⣦⢸⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⠀
@@ -126,12 +14,86 @@ M.opts = {
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⡟⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣦⣀⠀⠀⠀⠀⠀⣀⣴⣿⠟⠁⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⢿⣶⣿⡿⠿⠛⠁⠀⠀⠀⠀⠀
-    ]],
-    },
-    sections = {
-      { section = 'header' },
-    },
-  },
-}
+]]
 
-return M
+local add = require("utils.vim-pack").add
+local map = require("utils.keymap").map
+
+add({
+	name = "snacks",
+	src = "https://github.com/folke/snacks.nvim",
+	opts = {
+		bigfile = {
+			enabled = true,
+		},
+
+		indent = {
+			enabled = true,
+			animate = {
+				enabled = false,
+			},
+			indent = {
+				only_scope = true,
+				only_current = true,
+			},
+			scope = {
+				hl = "LineNr",
+			},
+		},
+
+		quickfile = {
+			enabled = true,
+		},
+
+		picker = {
+			enabled = true,
+			prompt = " ",
+			sources = {},
+			focus = "input",
+			layout = {
+				cycle = true,
+				preset = "bottom",
+			},
+		},
+
+		dashboard = {
+			enabled = true,
+			preset = {
+				pick = "fzf_lua",
+				header = header,
+			},
+			sections = {
+				{ section = "header" },
+			},
+		},
+	},
+	after = function()
+		map("<leader>ff", function()
+			Snacks.picker.files()
+		end, "Find files")
+
+		map("<leader>fc", function()
+			Snacks.picker.files({ cwd = vim.fn.stdpath("config") })
+		end, "Find configs")
+
+		map("<leader>fg", function()
+			Snacks.picker.grep()
+		end, "Grep in current project")
+
+		map("<leader>fgr", function()
+			Snacks.picker.resume({ source = "grep" })
+		end, "Resume last grep")
+
+		map("<leader>/", function()
+			Snacks.picker.lines()
+		end, "Grep in current buffer")
+
+		map("<leader><leader>", function()
+			Snacks.picker.smart({ multi = { "buffers" } })
+		end, "Find in open buffers")
+
+		map("<leader>km", function()
+			Snacks.picker.keymaps()
+		end, "Find keymaps")
+	end,
+})
