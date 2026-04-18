@@ -9,6 +9,20 @@
 
 ------
 
+## Picker
+
+- Using [snacks.nvim](https://github.com/folke/snacks.nvim)
+
+<img src="./assets/nvim-snacks.png" />
+
+---------
+
+## Diagnostics
+
+<img src="./assets/nvim-lsp-diagnostics.png" />
+
+-----------
+
 ## Document Colors
 
 This is enabled if the LSP supports it.
