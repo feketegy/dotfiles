@@ -1,14 +1,15 @@
-require("plugins.oil")
-require("plugins.auto-session")
-require("plugins.auto-pairs")
-require("plugins.auto-tags")
-require("plugins.blink-cmp")
-require("plugins.conform")
-require("plugins.gitsigns")
-require("plugins.scrolleof")
-require("plugins.vim-sleuth")
-require("plugins.lsp")
-require("plugins.treesitter")
-require("plugins.snacks")
+require 'plugins.oil'
+require 'plugins.auto-session'
+require 'plugins.auto-pairs'
+require 'plugins.auto-tags'
+require 'plugins.blink-cmp'
+require 'plugins.conform'
+require 'plugins.gitsigns'
+require 'plugins.scrolleof'
+require 'plugins.vim-sleuth'
+require 'plugins.lsp'
+require 'plugins.treesitter'
+require 'plugins.snacks'
+require 'plugins.lualine'
 
-require("plugins.theme")
+require 'plugins.theme'

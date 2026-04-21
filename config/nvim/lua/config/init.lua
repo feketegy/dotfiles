@@ -1,9 +1,5 @@
-require 'config.ui2'
 require 'config.options'
 require 'config.mappings'
+require 'config.ui2'
 require 'config.autocommands'
-
-require("config.statusline")
-
--- require 'plugins.lualine'
-
+-- require 'config.statusline'
