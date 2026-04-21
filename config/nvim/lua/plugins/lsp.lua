@@ -160,7 +160,7 @@ autocmd({ "BufReadPre", "BufNewFile" }, {
 			"html",
 			"cssls",
 			"cssmodules_ls",
-			"tailwindcss-language-server",
+			"tailwindcss",
 			"ts_ls",
 			"jsonls",
 			"dockerls",
