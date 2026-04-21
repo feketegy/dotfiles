@@ -96,5 +96,9 @@ add {
     map('<leader>km', function()
       Snacks.picker.keymaps()
     end, 'Find keymaps')
+
+    map('<leader>u', function()
+      Snacks.picker.undo()
+    end, 'Open undo')
   end,
 }
